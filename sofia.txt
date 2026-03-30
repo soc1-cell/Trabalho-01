@@ -1,1 +1,2 @@
-
+Arquivo criado por Sofia.
+Este commit faz parte do trabalho de GitHub.
