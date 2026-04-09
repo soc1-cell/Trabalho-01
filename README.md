@@ -4,7 +4,7 @@
 ## Integrantes
 - Sofia de Omena Correia
 - Carlos Vinicius da Silva
-- Pessoa 3
+- Vinícius Fantinel
 
 
 Este repositório foi criado para praticar o uso do GitHub, incluindo:
@@ -23,7 +23,7 @@ Cada integrante realizou commits adicionando e modificando arquivos.
 
 ### 3. Branches criadas
 - branch-sofia
-- branch-pessoa2
+- Vinícius Fantinel
 - branch-pessoa3
 
 ### 4. Merges realizados
