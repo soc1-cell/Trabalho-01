@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>📝 Lista de Tarefas</h1>
+
+    <div class="container">
+        <input type="text" id="tarefa" placeholder="Digite uma tarefa">
+        <button onclick="adicionar()">Adicionar</button>
+    </div>
+
+    <div class="container">
+        <h2>Tarefas</h2>
+        <button onclick="listar()">Atualizar</button>
+        <ul id="lista"></ul>
+    </div>
+
+    <script>
+        const API = "http://localhost:3000/tarefas";
+
+        async function adicionar() {
+            const texto = document.getElementById("tarefa").value;
+
+            await fetch(API, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ texto })
+            });
+
+            document.getElementById("tarefa").value = "";
+            listar();
+        }
+
+        async function listar() {
+            const res = await fetch(API);
+            const dados = await res.json();
+
+            const lista = document.getElementById("lista");
+            lista.innerHTML = "";
+
+            dados.forEach(t => {
+                const li = document.createElement("li");
+
+                li.innerHTML = `
+                    ${t.texto}
+                    <button onclick="remover(${t.id})">❌</button>
+                `;
+
+                lista.appendChild(li);
+            });
+        }
+
+        async function remover(id) {
+            await fetch(API + "/" + id, {
+                method: "DELETE"
+            });
+
+            listar();
+        }
+
+        listar();
+    </script>
+
+</body>
+</html>
