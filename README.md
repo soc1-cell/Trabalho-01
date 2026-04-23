@@ -21,12 +21,7 @@ Repositório criado por Sofia.
 ### 2. Commits realizados
 Cada integrante realizou commits adicionando e modificando arquivos.
 
-### 3. Branches criadas
-- branch-sofia
-- Vinícius Fantinel
-- branch-pessoa3
-
-### 4. Merges realizados
+### 3. Merges realizados
 Todas as branches foram integradas à branch principal (main) através de pull requests.
 
 ## Conclusão
